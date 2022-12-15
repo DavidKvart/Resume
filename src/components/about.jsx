@@ -34,6 +34,7 @@ const About = (props) => {
             className="form-control"
             rows="5"
             placeholder="tell us about your life story , the recomended amout of wards is not more than 100!"
+            maxlength="150"
           ></textarea>
           <p style={{ marginTop: "5px" }}>{errors.about?.message}</p>
         </div>
