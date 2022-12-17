@@ -20,22 +20,14 @@ const About = (props) => {
         onSubmit={handleSubmit((data) => {
           props.handleAbout(data);
           reset();
-          navigate("/techs");
+          navigate("/resume/techs");
         })}
       >
         <div className="form-group">
           <h3>Tell us about your self</h3>
           <p>for best chances of getting ypur dream job we recomned using</p>
-          <p>
-            a 50-100 words paragragh, and right details that are not included{" "}
-          </p>
-          <textarea
-            {...register("about", { required: "this is required" })}
-            className="form-control"
-            rows="5"
-            placeholder="tell us about your life story , the recomended amout of wards is not more than 100!"
-            maxlength="150"
-          ></textarea>
+          <p>a 50-100 words paragragh, and right details that are not included </p>
+          <textarea {...register("about", { required: "this is required" })} className="form-control" rows="5" placeholder="tell us about your life story , the recomended amout of wards is not more than 100!" maxlength="150"></textarea>
           <p style={{ marginTop: "5px" }}>{errors.about?.message}</p>
         </div>
         <button type="submit" className="btn btn-dark mt-2">

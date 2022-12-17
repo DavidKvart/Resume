@@ -28,8 +28,8 @@ const Experience = (props) => {
           reset();
           if (wereTogo == true) {
             wereTogo = !wereTogo;
-            navigate("/ex");
-          } else navigate("/educaition");
+            navigate("/resume/ex");
+          } else navigate("/resume/educaition");
         })}
       >
         <h3 className="mb-4 mt-1 mt-1">Work Expirience</h3>
@@ -39,12 +39,7 @@ const Experience = (props) => {
           <div class="col">
             <div className="form-group">
               <label>Job title</label>
-              <input
-                {...register("jobTitle", { required: "this is required" })}
-                className="form-control"
-                type="text"
-                placeholder="e.g Full stack developer"
-              ></input>
+              <input {...register("jobTitle", { required: "this is required" })} className="form-control" type="text" placeholder="e.g Full stack developer"></input>
               <p>{errors.jobTitle?.message}</p>
             </div>
           </div>
@@ -53,12 +48,7 @@ const Experience = (props) => {
           <div class="col">
             <div className="form-group">
               <label>Employer</label>
-              <input
-                {...register("employer", { required: "this is required" })}
-                className="form-control"
-                type="text"
-                placeholder="e.g Microsoft co."
-              ></input>
+              <input {...register("employer", { required: "this is required" })} className="form-control" type="text" placeholder="e.g Microsoft co."></input>
               <p>{errors.employer?.message}</p>
             </div>
           </div>
@@ -69,11 +59,7 @@ const Experience = (props) => {
           <div class="col">
             <div className="form-group">
               <label>Start Date</label>
-              <input
-                {...register("Sdate")}
-                className="form-control"
-                type="date"
-              ></input>
+              <input {...register("Sdate")} className="form-control" type="date"></input>
             </div>
           </div>
 
@@ -81,11 +67,7 @@ const Experience = (props) => {
           <div class="col">
             <div className="form-group">
               <label>End Date</label>
-              <input
-                {...register("Edate")}
-                className="form-control"
-                type="date"
-              ></input>
+              <input {...register("Edate")} className="form-control" type="date"></input>
             </div>
           </div>
         </div>
@@ -93,13 +75,7 @@ const Experience = (props) => {
         {/*description */}
         <div className="form-group mt-4">
           <label>Describe</label>
-          <textarea
-            {...register("description", { required: "this is required" })}
-            className="form-control"
-            rows="6"
-            placeholder="we recommend using no more that 80 words and you cant pass 250 latters"
-            maxlength="250"
-          ></textarea>
+          <textarea {...register("description", { required: "this is required" })} className="form-control" rows="6" placeholder="we recommend using no more that 80 words and you cant pass 250 latters" maxlength="250"></textarea>
           <p>{errors.description?.message}</p>
         </div>
 

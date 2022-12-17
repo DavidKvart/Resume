@@ -741,7 +741,7 @@ const Techs = (props) => {
       onSubmit={handleSubmit((links) => {
         props.handleLinks(links);
         reset();
-        navigate("/ex");
+        navigate("/resume/ex");
       })}
     >
       {/* best techs */}
@@ -761,11 +761,7 @@ const Techs = (props) => {
 
           <div class="form-group ">
             <label class="form-label">Pick your experty level</label>
-            <input
-              {...register("best")}
-              type="range"
-              class="form-range "
-            ></input>
+            <input {...register("best")} type="range" class="form-range "></input>
           </div>
         </div>
 
@@ -773,21 +769,12 @@ const Techs = (props) => {
         <div class="form-control mt-2">
           <div class="form-group ">
             <label>Pick your seconed best technolagis(up to5)</label>
-            <Select
-              options={optionsLanguag}
-              isMulti
-              onChange={(picks) => props.handleSeconedtechs(picks)}
-              isOptionDisabled={() => props.pickedSec >= 5}
-            />
+            <Select options={optionsLanguag} isMulti onChange={(picks) => props.handleSeconedtechs(picks)} isOptionDisabled={() => props.pickedSec >= 5} />
           </div>
 
           <div class="form-group ">
             <label class="form-label">Pick your experty level</label>
-            <input
-              {...register("seconed")}
-              type="range"
-              class="form-range "
-            ></input>
+            <input {...register("seconed")} type="range" class="form-range "></input>
           </div>
         </div>
 
@@ -795,31 +782,19 @@ const Techs = (props) => {
         <div class="form-control mt-2">
           <div class="form-group ">
             <label>Pick the rest of your skills(no limit)</label>
-            <Select
-              options={optionsLanguag}
-              isMulti
-              onChange={(picks) => props.handleRestofTechs(picks)}
-            />
+            <Select options={optionsLanguag} isMulti onChange={(picks) => props.handleRestofTechs(picks)} />
           </div>
         </div>
 
         {/* links */}
         <div className="form-group mt-1">
           <label>Linkdin link</label>
-          <input
-            {...register("linkdinLink")}
-            className="form-control"
-            type="text"
-          ></input>
+          <input {...register("linkdinLink")} className="form-control" type="text"></input>
         </div>
 
         <div className="form-group mt-1">
           <label>Git hub link</label>
-          <input
-            {...register("githubLink")}
-            className="form-control"
-            type="text"
-          ></input>
+          <input {...register("githubLink")} className="form-control" type="text"></input>
         </div>
 
         <button type="submit" className="btn btn-dark mt-2">

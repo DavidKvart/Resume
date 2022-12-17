@@ -32,8 +32,8 @@ const Educaition = (props) => {
           // this is the function that desides were to send the user
           if (wereTogo) {
             wereTogo = !wereTogo;
-            navigate("/educaition");
-          } else navigate("/final");
+            navigate("/resume/educaition");
+          } else navigate("/resume");
         })}
       >
         <h3 className="mb-4 mt-1 mt-1">Education</h3>
@@ -43,12 +43,7 @@ const Educaition = (props) => {
             <div class="col">
               <div className="form-group">
                 <label>School Name</label>
-                <input
-                  {...register("school", { required: "this is required" })}
-                  className="form-control"
-                  type="text"
-                  placeholder="e.g Ironi H Tel Aviv"
-                ></input>
+                <input {...register("school", { required: "this is required" })} className="form-control" type="text" placeholder="e.g Ironi H Tel Aviv"></input>
                 <p>{errors.school?.message}</p>
               </div>
             </div>
@@ -57,12 +52,7 @@ const Educaition = (props) => {
             <div class="col">
               <div className="form-group">
                 <label>Degree</label>
-                <input
-                  {...register("degree", { required: "this is required" })}
-                  className="form-control"
-                  type="text"
-                  placeholder="e.g B.A in computer sience "
-                ></input>
+                <input {...register("degree", { required: "this is required" })} className="form-control" type="text" placeholder="e.g B.A in computer sience "></input>
                 <p>{errors.degree?.message}</p>
               </div>
             </div>
@@ -75,11 +65,7 @@ const Educaition = (props) => {
             <div class="col">
               <div className="form-group">
                 <label>Start Date</label>
-                <input
-                  {...register("Sdate")}
-                  className="form-control"
-                  type="date"
-                ></input>
+                <input {...register("Sdate")} className="form-control" type="date"></input>
               </div>
             </div>
 
@@ -87,11 +73,7 @@ const Educaition = (props) => {
             <div class="col">
               <div className="form-group">
                 <label>End Date</label>
-                <input
-                  {...register("Edate")}
-                  className="form-control"
-                  type="date"
-                ></input>
+                <input {...register("Edate")} className="form-control" type="date"></input>
               </div>
             </div>
           </div>
@@ -101,12 +83,7 @@ const Educaition = (props) => {
         <div class="form-control mt-1">
           <div className="form-group ">
             <label>Describe</label>
-            <textarea
-              {...register("description", { required: "this is required" })}
-              className="form-control"
-              rows="5"
-              placeholder="Give us some informaition about your achivments"
-            ></textarea>
+            <textarea {...register("description", { required: "this is required" })} className="form-control" rows="5" placeholder="Give us some informaition about your achivments"></textarea>
             <p>{errors.description?.message}</p>
           </div>
         </div>
