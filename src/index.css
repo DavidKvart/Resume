@@ -244,7 +244,7 @@ body {
 }
 
 #nameHeader {
-  color: beige;
+  color: black;
   float: right;
   left: 15vw;
   bottom: 23vh;
@@ -257,10 +257,13 @@ body {
 
 .headingControl {
   align-self: center;
+  display: flex;
+  flex-direction: column;
+  
 }
 
 #profHeader {
-  color: beige;
+  color: black;
   left: 15.3vw;
   bottom: 24vh;
   font-family: var(--bs-font-sans-serif);
