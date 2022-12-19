@@ -29,7 +29,10 @@ const Experience = (props) => {
           if (wereTogo == true) {
             wereTogo = !wereTogo;
             navigate("/resume/ex");
-          } else navigate("/resume/educaition");
+          } else {
+            props.handProggress();
+            navigate("/resume/educaition");
+          }
         })}
       >
         <h3 className="mb-4 mt-1 mt-1">Work Expirience</h3>

@@ -5,10 +5,11 @@ const BgOption = (props) => {
   let navigat = useNavigate();
   let { handleTamplate } = props;
   let nextPage = () => {
+    props.handProggress();
     navigat("/resume/personal");
   };
   return (
-    <>
+    <div>
       <div className="bgOption">
         <h2 style={{ width: "14cm", color: "black" }}>chose your favorite tamplate!</h2>
         <button className="btn btn-outline-dark" onClick={() => nextPage()}>
@@ -27,7 +28,7 @@ const BgOption = (props) => {
         <div key="11" onClick={(e) => handleTamplate(e)} className="singleOption11"></div>
         <div key="12" onClick={(e) => handleTamplate(e)} className="singleOption12"></div>
       </div>
-    </>
+    </div>
   );
 };
 

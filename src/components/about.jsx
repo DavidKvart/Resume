@@ -20,6 +20,7 @@ const About = (props) => {
         onSubmit={handleSubmit((data) => {
           props.handleAbout(data);
           reset();
+          props.handProggress();
           navigate("/resume/techs");
         })}
       >

@@ -33,7 +33,10 @@ const Educaition = (props) => {
           if (wereTogo) {
             wereTogo = !wereTogo;
             navigate("/resume/educaition");
-          } else navigate("/resume");
+          } else {
+            props.handProggress();
+            navigate("/resume");
+          }
         })}
       >
         <h3 className="mb-4 mt-1 mt-1">Education</h3>

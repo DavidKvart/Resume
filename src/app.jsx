@@ -52,6 +52,7 @@ export default class App extends Component {
         },
       },
       tamplate: "1",
+      progress: 0,
     },
   };
 
@@ -82,19 +83,20 @@ export default class App extends Component {
             </div>
           </div>
 
-          <div className="row2">
+          <div className="row3">
             <Routes>
               <Route path="/" element={<Inderdoction />} />
               <Route path="resume" element={<Resume resume={this.state.resume} />}>
-                <Route path="tamplate" element={<BgOption handleTamplate={(e) => this.handleTamplate(e)} />} />
-                <Route path="personal" element={<PersonalInfo handleGender={(event) => this.handleGender(event)} handlePersonalInfo={(personalInfo) => this.handlePersonalInfo(personalInfo)} handlePersonalInfo_Multis={(selectedOptions) => this.handlePersonalInfo_Multis(selectedOptions)} />} />
-                <Route path="about" element={<About handleAbout={(aboutInfo) => this.handleAbout(aboutInfo)} />} />
-                <Route path="ex" element={<Experience handleXP={(xpArr) => this.handleXP(xpArr)} />} />
-                <Route path="educaition" element={<Educaition handleEducaition={(educaitionInfo) => this.handleEducaition(educaitionInfo)} />} />
+                <Route path="tamplate" element={<BgOption handProggress={() => this.handProggress()} handleTamplate={(e) => this.handleTamplate(e)} />} />
+                <Route path="personal" element={<PersonalInfo handProggress={() => this.handProggress()} handleGender={(event) => this.handleGender(event)} handlePersonalInfo={(personalInfo) => this.handlePersonalInfo(personalInfo)} handlePersonalInfo_Multis={(selectedOptions) => this.handlePersonalInfo_Multis(selectedOptions)} />} />
+                <Route path="about" element={<About handProggress={() => this.handProggress()} handleAbout={(aboutInfo) => this.handleAbout(aboutInfo)} />} />
+                <Route path="ex" element={<Experience handProggress={() => this.handProggress()} handleXP={(xpArr) => this.handleXP(xpArr)} />} />
+                <Route path="educaition" element={<Educaition handProggress={() => this.handProggress()} handleEducaition={(educaitionInfo) => this.handleEducaition(educaitionInfo)} />} />
                 <Route
                   path="techs"
                   element={
                     <Techs
+                      handProggress={() => this.handProggress()}
                       handleLinks={(links) => this.handleLinks(links)}
                       handleBesttechs={(picks) => {
                         this.handleBesttechs(picks);
@@ -117,7 +119,12 @@ export default class App extends Component {
       </body>
     );
   }
-
+  /////increment proggress
+  handProggress = () => {
+    let resume = this.state.resume;
+    resume.progress = resume.progress + 100 / 6;
+    this.setState({ resume });
+  };
   /// prints the pdf///
   printHtml = () => {
     let gitLink = this.state.resume.techs.links.gitHub;
